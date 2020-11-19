@@ -8,7 +8,7 @@ import java.sql.*;
 @SpringBootApplication
 public class PfwchoApplication {
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://Full2020-86394:3306/pfwcho?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+	static final String DB_URL = "jdbc:mysql://Full2020-86394:3306?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
 
 	static final String USER = "ipoleszak";
 	static final String PASS = "ipoleszak";
