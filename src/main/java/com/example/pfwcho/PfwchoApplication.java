@@ -8,8 +8,7 @@ import java.sql.*;
 @SpringBootApplication
 public class PfwchoApplication {
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-//	static final String DB_URL = "jdbc:mysql://Full2020-86394:3306/pfwcho?useSSL=false&serverTimezone=UTC";
-	static final String DB_URL = "jdbc:mysql://localhost:3306?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+	static final String DB_URL = "jdbc:mysql://Full2020-86394:3306/pfwcho?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
 
 	static final String USER = "ipoleszak";
 	static final String PASS = "ipoleszak";
@@ -33,10 +32,11 @@ public class PfwchoApplication {
 			}
 			resultSet.close();
 			if(!exists) {
-				String sql = "CREATE DATABASE pfwcho";
-				String sql2 = "CREATE TABLE pfwcho.country (`id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(90) DEFAULT NULL, `capital` varchar(90) DEFAULT NULL, PRIMARY KEY (`id`)) ";
-				stmt.executeUpdate(sql);
-				stmt.executeUpdate(sql2);
+				String createDB = "CREATE DATABASE pfwcho";
+				stmt.executeUpdate(createDB);
+
+				String createTable = "CREATE TABLE pfwcho.country (`id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(90) DEFAULT NULL, `capital` varchar(90) DEFAULT NULL, PRIMARY KEY (`id`)) ";
+				stmt.executeUpdate(createTable);
 			}
 		}catch(SQLException se){
 			se.printStackTrace();
@@ -55,12 +55,8 @@ public class PfwchoApplication {
 				se.printStackTrace();
 			}
 		}
-
 		SpringApplication.run(PfwchoApplication.class, args);
-
 	}
-
-
 }
 
 

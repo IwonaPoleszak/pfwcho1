@@ -5,51 +5,36 @@
         <meta charset="UTF-8">
         <link rel="stylesheet"
               href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
         <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet"
-              th:href="@{../css/demo.css}" type="text/css" />
     </head>
     <body th:style="'background-color: #F8F8F8'">
-
         <div class="container list">
-            <h3 class="title">Kraje i stolice</h3>
-            <nav class="navbar justify-content-end">
-                <a th:href="@{/pfwcho/countries/showFormForAdd}"><button type="button"
-                                                                  class="btn btn btn-primary mr-3 mb-2">Dodaj nowy kraj</button></a>
+            <h3 class="title" align="center">Kraje i stolice</h3>
+            <nav class="navbar justify-content-center">
+                <a th:href="@{/pfwcho/countries/showFormForAdd}"><button type="button" class="btn btn btn-secondary">Dodaj nowy kraj</button></a>
             </nav>
             <div class="table-responsive">
-                <table style="background-color:white;" class="table table-hover table-sm">
+                <table style="background-color:white;" class="table table-sm">
                     <thead>
-                        <tr class="table-secondary">
-                            <th class="text-center">Identyfiktor</th>
-                            <th class="text-center">Nazwa kraju</th>
-                            <th class="text-center">Stolica</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
+                    <tr class="table-primary">
+                        <th class="text-center">Identyfiktor</th>
+                        <th class="text-center">Nazwa kraju</th>
+                        <th class="text-center">Stolica</th>
+                        <th> </th>
+                        <th> </th>
+                    </tr>
                     </thead>
                     <tbody id="myTable">
-                        <tr th:each="country:${countries}">
-                            <td class="text-center" th:text="${country.id}" />
-                            <td class="text-center" th:text="${country.name}" />
-                            <td class="text-center" th:text="${country.capital}" />
-                            <td class="text-center" ><a
-                                    th:href="@{/pfwcho/countries/showFormForUpdate(id=${country.id})}"
-                                    class="btn btn-info">Edytuj</a></td>
-                            <td class="text-center"><a
-                                    th:href="@{/pfwcho/countries/deleteCountry(id=${country.id})}"
-                                    class="btn btn-danger">Usuń</a></td>
-
-                        </tr>
+                    <tr th:each="country:${countries}">
+                        <td class="text-center" th:text="${country.id}" />
+                        <td class="text-center" th:text="${country.name}" />
+                        <td class="text-center" th:text="${country.capital}" />
+                        <td class="text-center" ><a th:href="@{/pfwcho/countries/showFormForUpdate(id=${country.id})}" class="btn btn-info">Edytuj</a></td>
+                        <td class="text-center"><a th:href="@{/pfwcho/countries/deleteCountry(id=${country.id})}" class="btn btn-danger">Usuń</a></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
-
         </div>
-
     </body>
-
 </html>

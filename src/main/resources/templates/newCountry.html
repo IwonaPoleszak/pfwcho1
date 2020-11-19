@@ -3,46 +3,28 @@
     <head>
         <title>Kraj i stolica</title>
         <meta charset="utf-8">
-        <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
-        <link rel="stylesheet"
-              th:href="@{../css/demo.css}" type="text/css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     </head>
     <body th:style="'background-color: #F8F8F8'">
-
-        <div class="container list">
-            <h3 class="title">Formularz</h3>
-            <nav class="navbar justify-content-end">
-
-            </nav>
-            <form action="#" th:action="@{/pfwcho/countries/saveCountry}"
-                  th:object="${country}" method="POST">
-                <div class="row">
-
+        <div class="container list" >
+            <h3 class="title" align="center">Kraje i stolice</h3>
+            <br>
+            <form action="#" th:action="@{/pfwcho/countries/saveCountry}" th:object="${country}" method="POST">
+                <div class="row" align="center">
                     <input type="hidden" th:field="*{id}" />
-                    <div class="mb-3 col">
-                        Nazwa kraju: <input type="text" th:field="*{name}"
-                                     class="form-control col-10">
+                    <div class="mb-2 col">Nazwa kraju:
+                        <br><input type="text" align="center" th:field="*{name}">
                     </div>
-                    <div class="mb-3 col">
-                        Stolica: <input type="text" th:field="*{capital}"
-                                         class="form-control col-10">
+                    <div class="mb-2 col">Stolica:
+                        <br><input type="text" align="center" th:field="*{capital}">
                     </div>
-
                 </div>
-
+                <br>
                 <div class="nav justify-content-center">
-                    <button type="submit" class="btn mt-4 btn-info col-2 mr-2  ">Zapisz</button>
-                    <a th:href="@{/pfwcho/countries}" class="btn mt-4 col-2 btn-danger ">Anuluj</a>
+                    <button type="submit" class="btn btn-info">Zapisz</button>
+                    <a th:href="@{/pfwcho/countries}" class="btn btn-danger">Anuluj</a>
                 </div>
-
             </form>
-
         </div>
-
     </body>
-
 </html>
