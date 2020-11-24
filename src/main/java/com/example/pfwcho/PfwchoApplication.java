@@ -12,7 +12,7 @@ import java.sql.*;
 @ComponentScan
 public class PfwchoApplication {
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://Full2020-86394:3306/pfwcho?useSSL=false&serverTimezone=UTC";
+	static final String DB_URL = "jdbc:mysql://Full2020-86394:3306/pfwcho?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
 
 	static final String USER = "ipoleszak";
 	static final String PASS = "ipoleszak";
